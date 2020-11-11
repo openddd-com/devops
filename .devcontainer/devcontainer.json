@@ -1,0 +1,46 @@
+{
+	//https://github.com/microsoft/vscode-remote-try-python
+	"name": "python node go java dotnetcore cpp rust php",	
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile",
+		"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined", "--privileged"],
+		// if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
+		"args": { "VARIANT": "3.8" }
+	},
+	// Use 'settings' to set *default* container specific settings.json values on container create. 
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.gopath": "/go",
+		"python.pythonPath": "./venv/bin/python",	
+		"python.terminal.activateEnvironment": true,	
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+	},
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"golang.Go",
+		"ms-python.python",
+		"hashicorp.terraform",
+		"adelphes.android-dev-ext",
+		"diemasmichiels.emulate"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8000, 8080, 9000, 4723, 6080, 5555],
+
+	// Install flask and any other dependencies
+	// "postCreateCommand": "pip install -r requirements.txt",
+
+	// Comment out next line to run as root
+	"remoteUser": "user"
+}
