@@ -1,4 +1,5 @@
 
+SHELL := /bin/bash
 PYTHON = python3
 ifeq (, $(shell which $(PYTHON) 2> /dev/null ))
   PYTHON := python
@@ -46,6 +47,18 @@ ifneq ($(INSTALL_LAYOUT),)
 endif
 
 .PHONY: build force mesabuild pdf style hook test batchtest cover clean distclean theming
+
+autocrlf:
+	git config --global core.autocrlf input
+
+first:
+	#Install dependencies
+	source .ci/ubuntu_ci.sh \
+	&& install_kivy_test_run_apt_deps \
+	&& install_kivy_test_run_pip_deps
+	#Setup env
+	source .ci/ubuntu_ci.sh \
+	&& prepare_env_for_unittest
 
 build:
 	$(PYTHON) setup.py $(BUILD_OPTS)

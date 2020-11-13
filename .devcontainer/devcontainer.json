@@ -13,7 +13,7 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.gopath": "/go",
-		"python.pythonPath": "./venv/bin/python",	
+		"python.pythonPath": "/usr/bin/python3",	
 		"python.terminal.activateEnvironment": true,	
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
