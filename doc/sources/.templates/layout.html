@@ -91,8 +91,7 @@
     {%- else %}
       {%- set titlesuffix = "" %}
     {%- endif %}
-    <title>{{ title|striptags }}{{ titlesuffix }}</title>
-    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <title>{{ title|striptags }}{{ titlesuffix }}</title>    
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
     {%- if not embedded %}
@@ -161,6 +160,7 @@
         </div>
         <div id="topmenu">
             <ul class="navigation">
+                <li><a class="nav-wiki" href="{{ pathto('ops/index') }}">Devops</a></li>
                 <li><a class="nav-guides" href="{{ pathto('gettingstarted/intro') }}">Guides</a></li>
                 <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
                 <li><a class="nav-api" href="{{ pathto('api-kivy') }}">API Reference</a></li>
@@ -215,19 +215,19 @@
 {%- block footer %}
 <!-- Piwik -->
 <script>
-  var _paq = _paq || [];
-  _paq.push(['setDomains', '*.kivy.org']);
-  _paq.push(['setCookieDomain', '*.kivy.org']);
-  _paq.push(['enableHeartBeatTimer', 60]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//pw.kivy.org/";
-    _paq.push(['setTrackerUrl', u+'pw.php']);
-    _paq.push(['setSiteId', 4]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
-  })();
+  // var _paq = _paq || [];
+  // _paq.push(['setDomains', '*.kivy.org']);
+  // _paq.push(['setCookieDomain', '*.kivy.org']);
+  // _paq.push(['enableHeartBeatTimer', 60]);
+  // _paq.push(['trackPageView']);
+  // _paq.push(['enableLinkTracking']);
+  // (function() {
+  //   var u="//pw.kivy.org/";
+  //   _paq.push(['setTrackerUrl', u+'pw.php']);
+  //   _paq.push(['setSiteId', 4]);
+  //   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  //   g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  // })();
 </script>
 <script>
   var selector = $("#version_selector");

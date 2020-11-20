@@ -47,8 +47,12 @@ else:
     templates_path = ['.templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
-
+# pip install --upgrade recommonmark
+source_suffix = = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 # The master toctree document.
 master_doc = 'index'
 
